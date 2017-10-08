@@ -19,11 +19,8 @@ namespace DataAccessLayer
 
                 using (SqlCommand cmd = connection.CreateCommand())
                 {
-
-
-                    cmd.CommandText = "Insert into OrderDB (CustomerId, SaleLineItemDBId) values (@CustomerId, @SaleLineItemDBId)";
+                    cmd.CommandText = "Insert into OrderDB (CustomerId) values (@CustomerId)";
                     cmd.Parameters.AddWithValue("CustomerId", entity.customer.Id);
-                    cmd.Parameters.AddWithValue("SaleLineItemDBId", entity.saleLineItem.Id);
                     cmd.ExecuteNonQuery();
                 }
                 connection.Close();
@@ -54,15 +51,11 @@ namespace DataAccessLayer
                     cmd.Parameters.AddWithValue("id", id);
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    
+                    //Finding and fetching the result, by also fetching the customer
                     bool isRead = reader.Read();
-
-                  
                     DBCustomer dBCustomer = new DBCustomer();
                     Customer c = dBCustomer.Get(reader.GetInt32(2));
-                    // DBSaleLineitem dBSaleLineItem = new DBSaleLineItem();
-                    // SaleLineItemDB sliDb = dBSaleLineItem.Get(reader.GetInt32(2));
-                    return new Order(reader.GetInt32(0), c, sliDb);
+                    return new Order(reader.GetInt32(0), c);
                 }
                 //connection.Close();
             }
@@ -70,12 +63,40 @@ namespace DataAccessLayer
 
         public List<Order> GetAll()
         {
-            throw new NotImplementedException();
+             List<Order> OrderList = new List<Order>();
+            using (SqlConnection connection = conn.OpenConnection())
+            {
+                using (SqlCommand cmd = connection.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT * FROM OrderDB";
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+
+                    while (reader.Read())
+                    {
+                        DBCustomer dBCustomer = new DBCustomer();
+                        Customer c = dBCustomer.Get(reader.GetInt32(2));
+                        Order order = new Order(reader.GetInt32(0), c);
+                        OrderList.Add(product);
+                    }
+
+                }
+            }
+            return OrderList;
         }
 
         public void Update(Order entity)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = conn.OpenConnection())
+            {
+                using (SqlCommand cmd = connection.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE ProductDB SET CustomerId = @CustomerId WHERE Id = @Id";
+                    cmd.Parameters.AddWithValue("CustomerId", entity.customer.Id);
+                    cmd.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
         }
     }
 }

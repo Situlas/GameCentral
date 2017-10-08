@@ -10,13 +10,11 @@ namespace Models
     {
         public int Id { get; set; }
         public Customer customer { get; set; }
-        public SaleLineItem saleLineItem { get; set; }
 
-        public Order(int id, Customer customer, SaleLineItem saleLineItem)
+        public Order(int id, Customer customer)
         {
             Id = id;
             this.customer = customer;
-            this.saleLineItem = saleLineItem;
         }
     }
 }

@@ -11,12 +11,15 @@ namespace Models
         public int Id { get; set; }
         public Product product { get; set; }
         public int Quantity { get; set; }
+        public int OrderDB_OrderId { get; set; }
 
-        public SaleLineItem(int id, Product product, int quantity)
+        public SaleLineItem(int Id, Product Product, intQuantity, int OrderDB_OrderId)
         {
-            Id = id;
+            this.Id = Id;
             this.product = product;
-            Quantity = quantity;
+            this.Quantity = quantity;
+            this.OrderDB_OrderId = OrderDB_OrderId;
+
         }
     }
 }

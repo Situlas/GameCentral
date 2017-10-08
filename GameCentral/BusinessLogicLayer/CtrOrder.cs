@@ -4,34 +4,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer;
 
 namespace BusinessLogicLayer
 {
     class CtrOrder : IController<Order>
     {
+        DBOrder dbOrder = new DBOrder();
+
         public void Create(Order entity)
         {
-            throw new NotImplementedException();
+            dbOrder.Create(enity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            dbOrder.Delete(id);
         }
 
         public Order Get(int id)
         {
-            throw new NotImplementedException();
+            return dbOrder.Get(id);
         }
 
         public List<Order> GetAll()
         {
-            throw new NotImplementedException();
+            return dbOrder.GetAll();
         }
 
         public void Update(Order entity)
         {
-            throw new NotImplementedException();
+            dbOrder.Update(entity);
         }
     }
 }

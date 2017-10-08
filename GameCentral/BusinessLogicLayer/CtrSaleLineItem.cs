@@ -4,34 +4,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer;
 
 namespace BusinessLogicLayer
 {
-    class CtrSaleLineItem : IController<SaleLineItem>
+    public class CtrSaleLineItem : IController<SaleLineItem>
     {
+        DBSaleLineItem dbSaleLineItem = new DBSaleLineItem();
+
         public void Create(SaleLineItem entity)
         {
-            throw new NotImplementedException();
+            dbSaleLineItem.Create(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            dbSaleLineItem.Delete(id);
         }
 
         public SaleLineItem Get(int id)
         {
-            throw new NotImplementedException();
+            return dbSaleLineItem.Get(id);
         }
 
         public List<SaleLineItem> GetAll()
         {
-            throw new NotImplementedException();
+            return dbSaleLineItem.GetAll();
         }
 
         public void Update(SaleLineItem entity)
         {
-            throw new NotImplementedException();
+            dbSaleLineItem.Update(entity);
         }
     }
 }
