@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace GameCentralWCFService
 {
+    [ServiceContract]
     public interface IGameCentralServiceProduct
     {
         /// <summary>

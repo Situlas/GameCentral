@@ -46,7 +46,6 @@
     <Compile Include="DBProduct.cs" />
     <Compile Include="DBOrder.cs" />
     <Compile Include="DBSaleLineItem.cs" />
-    <Compile Include="DBSaleLineItemDb.cs" />
     <Compile Include="IDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

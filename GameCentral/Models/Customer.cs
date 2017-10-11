@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-   public class Customer
+    [Serializable]
+    public class Customer
     {
         public int Id { get; set; }
         public int Phone { get; set; }

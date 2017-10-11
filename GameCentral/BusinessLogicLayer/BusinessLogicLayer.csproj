@@ -44,7 +44,6 @@
     <Compile Include="CtrProduct.cs" />
     <Compile Include="CtrOrder.cs" />
     <Compile Include="CtrSaleLineItem.cs" />
-    <Compile Include="CtrSaleLineItemDb.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

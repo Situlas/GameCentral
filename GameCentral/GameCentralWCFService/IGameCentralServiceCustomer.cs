@@ -12,10 +12,6 @@ namespace GameCentralWCFService
     [ServiceContract]
     public interface IGameCentralServiceCustomer
     {
-        /// <summary>
-        ///  Customer Operation Contracts
-        /// </summary>
-        /// <param name="customer"></param>
         [OperationContract]
         void Create(Customer customer);
         [OperationContract]
@@ -26,17 +22,5 @@ namespace GameCentralWCFService
         List<Customer> GetAll();
         [OperationContract]
         void Update(Customer customer);
-
-
-
-
-
-
-
-
-
-
-
     }
-
 }

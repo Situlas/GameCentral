@@ -14,7 +14,7 @@ namespace BusinessLogicLayer
 
         public void Create(Order entity)
         {
-            dbOrder.Create(enity);
+            dbOrder.Create(entity);
         }
 
         public void Delete(int id)

@@ -21,9 +21,9 @@ namespace DataAccessLayer
                     using (SqlCommand cmd = connection.CreateCommand())
                     {
                         cmd.CommandText = "Insert into SaleLineItem (ProductId, Quantity, OrderDB_OrderId) values (@ProductId, @Quantity, @OrderDB_OrderId)";
-                        cmd.Parameters.AddWithValue("ProductId", entity.product.Id);
+                        cmd.Parameters.AddWithValue("ProductId", entity.SliProduct.Id);
                         cmd.Parameters.AddWithValue("Quantity", entity.Quantity);
-                        cmd.Parameters.AddWithValue("OrderDB_OrderId", entity.OrderDB_OrderId)
+                        cmd.Parameters.AddWithValue("OrderDB_OrderId", entity.OrderDB_OrderId);
                         cmd.ExecuteNonQuery();
                     }
                     connection.Close();
@@ -73,11 +73,11 @@ namespace DataAccessLayer
                 {
                     cmd.CommandText = "SELECT * FROM SaleLineItem";
                     SqlDataReader reader = cmd.ExecuteReader();
-
+                    DBProduct dbProduct = new DBProduct();
 
                     while (reader.Read())
                     {
-                        SaleLineItem sli = new SaleLineItem(reader.GetInt32(0), Get(reader.GetInt32(1)), reader.GetInt32(2), reader.GetInt32(3));
+                        SaleLineItem sli = new SaleLineItem(reader.GetInt32(0), dbProduct.Get(reader.GetInt32(1)), reader.GetInt32(2), reader.GetInt32(3));
                         SaleLineItemList.Add(sli);
                     }
 

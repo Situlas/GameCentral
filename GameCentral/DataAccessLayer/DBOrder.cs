@@ -77,7 +77,7 @@ namespace DataAccessLayer
                         DBCustomer dBCustomer = new DBCustomer();
                         Customer c = dBCustomer.Get(reader.GetInt32(2));
                         Order order = new Order(reader.GetInt32(0), c);
-                        OrderList.Add(product);
+                        OrderList.Add(order);
                     }
 
                 }
