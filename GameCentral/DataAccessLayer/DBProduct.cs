@@ -95,6 +95,7 @@ namespace DataAccessLayer
                     cmd.Parameters.AddWithValue("Description", entity.Description);
                     cmd.Parameters.AddWithValue("Stock", entity.Stock);
                     cmd.Parameters.AddWithValue("Sold", entity.Sold);
+                    cmd.Parameters.AddWithValue("Id", entity.Id);
                     cmd.ExecuteNonQuery();
                 }
                 connection.Close();

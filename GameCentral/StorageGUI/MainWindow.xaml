@@ -9,9 +9,9 @@
 	<Grid>
 		<Button Content="Opret vare" HorizontalAlignment="Left" Margin="48,35,0,0" VerticalAlignment="Top" Width="101" Click="Button_Click" Height="32"/>
 		<Button Content="Redigere vare" HorizontalAlignment="Left" Margin="165,35,0,0" VerticalAlignment="Top" Width="101" Click="Button_Click" Height="32"/>
-		<ListBox x:Name="VareList" HorizontalAlignment="Left" Height="432" Margin="48,110,0,0" VerticalAlignment="Top" Width="649" SelectionChanged="VareList_SelectionChanged"/>
-		<TextBox HorizontalAlignment="Left" Height="34" Margin="466,71,0,0" TextWrapping="Wrap" Text="Søg på vare" VerticalAlignment="Top" Width="156"/>
-		<Button Content="Søg" HorizontalAlignment="Left" Margin="627,71,0,0" VerticalAlignment="Top" Width="70" Height="34"/>
+		<ListBox x:Name="VareList" HorizontalAlignment="Left" Height="432" Margin="48,110,0,0" VerticalAlignment="Top" Width="649" SelectionChanged="VareList_SelectionChanged" Grid.Row="5" Grid.RowSpan="5"/>
+		<TextBox x:Name="searchProductTextField" HorizontalAlignment="Left" Height="34" Margin="466,71,0,0" TextWrapping="Wrap" Text="Søg på vare" VerticalAlignment="Top" Width="156"/>
+		<Button Content="Søg" HorizontalAlignment="Left" Margin="627,71,0,0" VerticalAlignment="Top" Width="70" Height="34" Click="Button_Click_1"/>
 		<ListBox HorizontalAlignment="Left" Height="383" Margin="747,159,0,0" VerticalAlignment="Top" Width="408"/>
 		<TextBox HorizontalAlignment="Left" Height="34" Margin="782,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125"/>
 		<Label Content="Fra:" HorizontalAlignment="Left" Margin="748,114,0,0" VerticalAlignment="Top"/>

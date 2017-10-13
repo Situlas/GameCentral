@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StorageGUI.IGameCentralServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,13 @@ namespace StorageGUI
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        IGameCentralServiceReference1.IGameCentralServiceProduct client = new IGameCentralServiceReference1.GameCentralServiceProductClient();
+
         public MainWindow()
         {
             InitializeComponent();
-            ShowAllProcucts();
+            ProductTableGenerator();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,16 +42,17 @@ namespace StorageGUI
         }
 
         private void ProductTableGenerator() {
+            List<Product> productGetAllList = client.GetAll();
+            foreach(var item in productGetAllList){
+                VareList.Items.Add(item.Name);
+            }
+        } 
 
-
-        }
-
-        private void ShowAllProcucts() {
-
-            VareList.Items.Add("Hej med dig");
-
-
-
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            VareList.Items.Clear();
+            Product p = client.Get(Convert.ToInt32(searchProductTextField.Text));
+            VareList.Items.Add(p.Name);
         }
     }
 }
