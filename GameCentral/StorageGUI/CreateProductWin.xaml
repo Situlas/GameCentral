@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StorageGUI"
         mc:Ignorable="d"
-        Title="CreateProductWin" Height="286.792" Width="229.245">
+        Title="Opret nyt produkt" Height="286.792" Width="229.245">
 	<Grid>
 		<Button Content="Opret vare" HorizontalAlignment="Left" Margin="131,218,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-		<TextBox x:Name="NameTextField" HorizontalAlignment="Left" Height="23" Margin="95,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<TextBox x:Name="NameTextField" HorizontalAlignment="Left" Height="23" Margin="84,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 		<Label Content="Navn:" HorizontalAlignment="Left" Margin="41,42,0,0" VerticalAlignment="Top"/>
 		<TextBox x:Name="PriceTextField" HorizontalAlignment="Left" Height="23" Margin="84,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 		<Label Content="Pris:" HorizontalAlignment="Left" Margin="48,68,0,0" VerticalAlignment="Top"/>

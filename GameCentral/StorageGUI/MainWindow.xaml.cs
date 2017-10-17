@@ -32,8 +32,12 @@ namespace StorageGUI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            CreateProductWin win1 = new CreateProductWin();
-            win1.Show();
+            //Find id til produktet fra den markerede på listen
+            Product productToEdit = VareList.SelectedItem as Product;
+            Console.WriteLine(productToEdit.Id);
+            //Send det markerede objekt videre til siden hvor den kan redigeres
+            EditProduct editProduct = new EditProduct(productToEdit);
+            editProduct.Show();
         }
 
         private void VareList_SelectionChanged(object sender, SelectionChangedEventArgs e)
